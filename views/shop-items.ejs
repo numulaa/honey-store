@@ -1,0 +1,53 @@
+<%- include('partials/header') -%>
+
+<section id="explore-recipes" >
+    <section
+      class="p-5 mx-auto space-x-1 justify-around max-w-2xl px-8 py-24 md:py-8 md:px-0  lg:max-w-7xl lg:px-8"
+    >
+      <!-- items -->
+      <div
+        class="mt-0 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
+      >
+      <% for(var i=0; i<products.length; i++) {%>
+      <!-- 1st item -->
+        <div class="group relative">
+          <div
+            class="min-h-80 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+          >
+            <img
+              src="<%= products[i].image%>"
+              alt=""
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full shop-item-image"
+            />
+          </div>
+          <div class="mt-4 flex justify-between">
+            <div>
+              <h3 class="text-md font-medium text-gray-700 shop-item-title">
+                <a href="#">
+                  <span aria-hidden="true" class="absolute inset-x-0 top-0 h-8"></span>
+                  <%= products[i].title %>
+                </a>
+              </h3>
+              <p class="mt-1 text-sm text-gray-500"><%= products[i].desc %></p>
+             <form action="/api/carts/<%= products[i].id %>" method="POST">
+             <button class="mt-2 px-4 py-1 border-[1px] border-darkGreen rounded-full hover:bg-darkGreen hover:text-white shop-item-button">Add to Cart</button>
+            </form>
+            </div>
+            <div class="flex space-x-1">
+              <span class="text-sm">$</span>
+              <h4 class="font-bold shop-item-price"><%= products[i].price %></h4>
+              <span class="text-sm">.00</span>
+            </div>
+            <!-- <div class="flex space-x-1">
+              <i class="fa-regular fa-heart text-sm font-medium text-gray-900"></i>
+              <span class="text-sm">99</span>
+            </div> -->
+          </div>
+        </div>  
+        <% } %>
+         
+      </div>
+      </div> 
+    </section>
+  </section>
+<%- include('partials/footer') -%>

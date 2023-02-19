@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/84ca2580c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Plantee</title>
+  </head>
+  <body>
+    <header class="py-5 px-8 mx-auto">
+      <nav class="flex justify-between items-centet">
+        <div>
+          <h2 class="font-bold text-2xl text-darkGreen">Plantee</h2>
+        </div>
+        <div class="flex justify-between space-x-8 items-center">
+          <fieldset>
+            <label for="category-select" class="hidden">Categories</label>
+            <select name="category" id="category-select">
+              <option value="">Categories</option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+            </select>
+          </fieldset>
+          <a href="#">Deals</a>
+          <a href="#">What's new</a>
+          <a href="#">Delivery</a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a
+            href="/login"
+            class="text-center text-baseline p-2 hover:text-darkGrayishBlue"
+            >Login</a
+          >
+          <a
+            href="/signup"
+            class="text-center p-2 px-3 text-baseline rounded-full bg-brightRed hover:bg-brightRedLight"
+            >Signup</a
+          >
+          <div class="flex items-center">
+            <a href="/carts/find/">
+              <i class="fa-solid fa-cart-shopping"> </i>
+              <span class="capitalize">Cart</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- hamburger icon -->
+        <button
+          id="menu-btn"
+          class="hamburger block md:hidden focus:outline-none text-baseline"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </nav>
+      <!-- mobile menu -->
+      <div class="md:hidden sm:block">
+        <div
+          id="menu"
+          class="hidden block flex-col items-center rounded-lg bg-white self-end py-8 mt-10 space-y-6 font-bold sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="/login" class="hover:text-darkGrayishBlue">Login</a>
+          <a href="/signup" class="hover:text-darkGrayishBlue">Signup</a>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

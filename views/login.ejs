@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Dapur Nenek</title>
+  </head>
+  <body>
+    <header class="relative container p-5 px-8 mx-auto">
+      <nav class="flex justify-between items-center">
+        <div>
+          <h2 class="font-bold text-2xl">dapurNenek.</h2>
+        </div>
+        <div>
+          <span class="text-darkGrayishBlue">Don't have any account?</span>
+          <a
+            href="/signup"
+            class="text-center p-2 px-3 rounded-full bg-brightRed hover:bg-brightRedLight"
+            >Signup
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="row justify-content-center">
+        <section class="col-6 mt-5">
+          <% if (locals.messages.errors) { %> <% messages.errors.forEach( el =>
+          { %>
+          <div class="alert alert-danger"><%= el.msg %></div>
+          <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+          messages.info.forEach( el => { %>
+          <div class="alert alert-info"><%= el.msg %></div>
+          <% }) %> <% } %>
+        </section>
+      </div>
+
+      <section id="login">
+        <section class="container p-5 px-2 md:px-10 mx-auto">
+          <form
+            action="/login"
+            method="POST"
+            class="md:grid p-5 px-8 mt-5 md:mt-0"
+          >
+            <div class="shadow sm:overflow-hidden sm:rounded-md">
+              <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+                <!-- email -->
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="given-name"
+                    aria-describedby="emailHelp"
+                    class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  />
+                </div>
+                <!-- password -->
+                <div>
+                  <label
+                    for="password"
+                    class="block text-sm font-medium text-gray-700"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  />
+                </div>
+                <!-- confirm password -->
+                <div>
+                  <label
+                    for="confirmPassword"
+                    class="block text-sm font-medium text-gray-700"
+                    >Confirm Password</label
+                  >
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    class="p-1.5 mt-1 block w-full rounded-md border-2 border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  class="text-center text-sm p-2 px-8 rounded-full bg-brightRed hover:bg-brightRedLight cursor-pointer"
+                >
+                  Login</buttton
+                >
+              </div>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
+
+<%- include('partials/footer') -%>

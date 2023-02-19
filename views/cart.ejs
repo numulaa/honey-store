@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <body>
+    <main id="cartItems">
+      <h1>My Cart</h1>
+      <div>
+        <p>Your Cart is empty</p>
+      </div>
+      <% for(var i=0; i<cartItems.length; i++) {%>
+
+      <div class="flex">
+        <img src="<%= cartItems[i].cartItem.image%>" alt="item image">
+        <h3><%= cartItems[i].cartItem.title %></h3>
+        <p><%= cartItems[i].cartItem.priceInCents %></p>
+      </div>
+      <% } %>
+
+      <div>
+        <h4>Total</h4>
+        <h2>$ <strong>0.00</strong></h2>
+      </div>
+    </main>
+  </body>
+</html>
